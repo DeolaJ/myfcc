@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Quote Machine
+	</title>
+	<style>
+		@import url("font-awesome/css/font-awesome.min.css");
+		body {
+			margin: 0;
+		}
+		.mainbody {
+			height: 100vh;
+			background-color: yellow;
+			display: flex;
+		}
+
+		.quotebody {
+			height: 220px;
+			width: 600px;
+			background-color: blue;
+			margin: 0 auto;
+			align-self: center;
+			border-radius: 10px;
+			position: relative;
+		}
+
+		.quote-social {
+    		list-style-type: none;
+    		display: flex;
+    		padding: 10px;
+    		margin-top: 5px;
+    		position: absolute;
+	    	display: inline-block;
+	    	bottom: 0;
+	    	width: 100%;
+	    	box-sizing: border-box;
+    	}
+
+    	.newquo {
+    		line-height: 40px;
+    		display: inline-block;
+    		border-radius: 5px;
+    		float: right !important;
+    		font-size: 17px;
+    		padding-top: 2px;
+    	}
+
+    	#quote {
+    		font-size: 17px;
+    	}
+
+    	#quotewords {
+    		margin: 10px;
+    		padding: 10px;
+    		text-align: justify;
+    	}
+
+    	.icon {
+    		width: 40px;
+    		height: 40px;
+    		background-color: rgb(107,118,254);
+    		border-radius: 5px;
+    		line-height: 40px;
+    		margin-right: 10px;
+    		text-align: center;
+    		font-size: 20px;
+    		border: none;
+	    	cursor: pointer;
+	    	display: inline-block;
+    	}
+
+    	#icon-fb {
+    		background-color: rgb(77,109,188);
+    	}
+
+    	#icon-tw {
+    		background-color: rgb(138,225,219);
+    	}
+
+    	.fa {
+    		color: white;
+    	}
+
+    	.footer-social a {
+    		color: white;
+    	}
+	</style>
+</head>
+<body>
+	<div class='mainbody' id='mainbody'>
+		<div class='quotebody'>
+			<div id='quotewords'>
+				""
+			</div>
+				<ul class="quote-social">
+			        <li class='icon' id='icon-fb'><a href="#" target='_blank'><i class="fa fa-facebook"></i></a></li>
+					<li class='icon' id='icon-tw'><a href ='#' target='_blank'><i class="fa fa-twitter"></i></a></li>
+					<li class='newquo'><button id='quote'>New Quote</button></li>
+	     		</ul> 
+		</div>
+	</div>
+<script type='text/javascript'>
+	function getRandomColor() {
+					var letters = '0123456789ABCDEF'.split('');
+					var color =  '#';
+					for (var i = 0; i < 6; i++ ) {
+						color += letters[Math.round(Math.random() * 15)];
+					}
+					return color;
+				};
+	document.getElementById('quote').onclick = function() {
+		var newcolo = getRandomColor();
+		document.getElementById('mainbody').style.backgroundColor = newcolo;
+		document.getElementById('quote').style.color = newcolo;
+		$.getJSON("https://talaikis.com/api/quotes/random/", function(json) {
+			$("#quotewords").html(JSON.stringify(json));
+		});
+	}
+
+	$('#quote').on('click', function() {
+		$.getJSON("https://talaikis.com/api/quotes/random/", function(json) {
+			$("#quotewords").html(JSON.stringify(json));
+		});
+	
+	}); 
+
+</script>
+</body>
+</html>

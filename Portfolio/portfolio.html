@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+	<meta charset = 'UTF-8' />
+	<title>
+		Portfolio
+	</title>
+	<link href="main.css" rel='stylesheet' type='text/css' />
+	<link href="bootstrap-theme.css" rel='stylesheet' type='text/css' /> 
+</head>
+<body>
+	<div class='container-fluid'>
+		<a id='home'><div class='topmenu'></a>
+			<nav id='topmenu' class='navbar navbar-nav navbar-inverse'>
+				<ul class='open active'>
+					<li class='logo'><a href=''>DeolaJoe</a></li>
+					<li><a href='#home' id='homebutton'>HOME</a></li>
+					<li><a href='#meet' id='aboutbutton'>ABOUT</a></li>
+					<li class = ' dropdown-menu'><a href='#portfolio' id='portfoliobutton'>PORTFOLIO</a></li>
+					<li><a href='#contact' id='contactbutton'>CONTACT</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class='about'>
+			<h1>Front-End Developer, aspiring Reservoir Engineer and a young entrepreneur with practical experience in leadership roles</h1>
+			<img src='pic.jpg' width='200' height ='200' alt='personal picture'/>
+		</div>
+		<div class='portfolio'>
+			<a id='portfolio'><h1>PORTFOLIO</h1></a>
+			<div class = 'emptyboxes'></div>
+			<div class = 'emptyboxes'></div>
+			<div class = 'emptyboxes'></div>
+			<div class = 'emptyboxes'></div>
+			<div class = 'emptyboxes'></div>
+			<div class = 'emptyboxes'></div>
+		</div>
+		<div class='contact'>
+			<a id='contact'><h1>CONTACT</h1></a>
+			<form action='' method='post'>
+				<input type='underline' name='user_name' placeholder="NAME" />
+				<br><br><br>
+				<input type='text' name='user_number' placeholder="PHONE NUMBER" />
+				<br><br><br>
+				<input type='text' name='user_email' placeholder="EMAIL" />
+				<br><br><br>
+				<input type='text' name='user_message' placeholder="MESSAGE" />
+				<br><br><br>
+				<button type='submit' class='btn-primary'>Send your Message</button>
+			</form>
+			<div class='side'>
+				<p>Want to get in touch with me? Be it to request more info about myself or my experience? Contact me. <br/><br/><br/><hr/><span>I will reply ASAP</span></p>
+			</div>
+		</div>
+		<div class='meet'>
+			<a id='meet'><h1>ABOUT</h1></a>
+			<p>You could also reach me on</p>
+			<br/><br/>
+				<div id='meet'>						
+					<ul>
+						<li><a href='http://www.facebook.com/adeyemo.j.adeola' target='_blank'>FACEBOOK</a></li>
+						<li><a href='http://www.twitter.com/Deo_Joe' target='_blank'>TWITTER</a></li>
+						<li><a href='http://www.instagram.com/de.joe' target='_blank'>INSTAGRAM</a></li>
+					</ul>		
+				</div>
+		</div>
+		<footer>
+			<p>Copywright @Deola</p>
+		</footer>
+	</div>
+	<script type='text/javascript'>
+	function normalColorC() {
+		document.getElementById('homebutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+		document.getElementById('aboutbutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+		document.getElementById('portfoliobutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+					document.getElementById('homebutton').style.Color = 'gray';
+					document.getElementById('portfoliobutton').style.Color = 'gray';
+					document.getElementById('aboutbutton').style.Color = 'gray';
+	};
+		function normalColorH() {
+		document.getElementById('contactbutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+		document.getElementById('aboutbutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+		document.getElementById('portfoliobutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+					document.getElementById('contactbutton').style.Color = 'gray';
+					document.getElementById('portfoliobutton').style.Color = 'gray';
+					document.getElementById('aboutbutton').style.Color = 'gray';
+	};
+		function normalColorA() {
+		document.getElementById('contactbutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+		document.getElementById('homebutton').style.backgroundColor = 'rgba(247,241,53, 0)';		
+		document.getElementById('portfoliobutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+					document.getElementById('contactbutton').style.Color = 'gray';
+					document.getElementById('homebutton').style.Color = 'gray';
+					document.getElementById('portfoliobutton').style.Color = 'gray';
+	};
+		function normalColorP() {
+		document.getElementById('contactbutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+		document.getElementById('homebutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+		document.getElementById('aboutbutton').style.backgroundColor = 'rgba(247,241,53, 0)';	
+					document.getElementById('contactbutton').style.Color = 'gray';
+					document.getElementById('homebutton').style.Color = 'gray';
+					document.getElementById('aboutbutton').style.Color = 'gray';
+	};
+
+
+
+		document.getElementById('contactbutton').onclick = function () {			
+				document.getElementById('contactbutton').style.backgroundColor = 'rgb(247,241,53)';	
+				document.getElementById('contactbutton').style.Color = 'rgb(42,42,42)';
+				document.getElementById('topmenu').style.opacity = 0;
+				setTimeout(function() {
+					document.getElementById('topmenu').style.opacity = 1;
+					normalColorC();
+				}, 1000);		
+		}; 
+
+		document.getElementById('homebutton').onclick = function () {
+			document.getElementById('homebutton').style.backgroundColor = 'rgb(247,241,53)';
+			document.getElementById('homebutton').style.Color = 'rgb(42,42,42)';
+			setTimeout(function() {
+					normalColorH();
+				}, 1000);				
+		}; 
+
+		document.getElementById('aboutbutton').onclick = function () {
+				document.getElementById('aboutbutton').style.backgroundColor = 'rgb(247,241,53)';
+				document.getElementById('aboutbutton').style.Color = 'rgb(42,42,42)';
+				document.getElementById('topmenu').style.opacity = 0;
+				setTimeout(function() {
+					document.getElementById('topmenu').style.opacity = 1;
+					normalColorA();
+				}, 1000);				
+		}; 
+		document.getElementById('portfoliobutton').onclick = function () {
+				document.getElementById('portfoliobutton').style.backgroundColor = 'rgb(247,241,53)';
+				document.getElementById('portfoliobutton').style.Color = 'rgb(42,42,42)';
+				document.getElementById('topmenu').style.opacity = 0;
+				setTimeout(function() {
+					document.getElementById('topmenu').style.opacity = 1;
+					normalColorP();
+				}, 1000);		
+		}; 
+	</script>
+</body>
+</html>
